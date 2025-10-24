@@ -1,0 +1,169 @@
+ body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 20px;
+     background: #f5f5f5;
+ }
+
+ .header {
+     background: linear-gradient(135deg, #0a2083 0%, #764ba2 100%);
+     color: white;
+     padding: 30px;
+     border-radius: 10px;
+     margin-bottom: 30px;
+     text-align: center;
+ }
+
+ .header h1 {
+     margin: 0 0 10px 0;
+     font-size: 2.5rem;
+ }
+
+ .header p {
+     margin: 0;
+     font-size: 1.1rem;
+     opacity: 0.9;
+ }
+
+ .logo {
+  width: 80px; /* Ajusta el tamaño según lo que necesites */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+ .db-info {
+     background: white;
+     padding: 20px;
+     border-radius: 8px;
+     margin-bottom: 30px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ }
+
+ .db-info table {
+     width: 100%;
+     border-collapse: collapse;
+ }
+
+ .db-info td {
+     padding: 8px;
+     border-bottom: 1px solid #e2e8f0;
+ }
+
+ .db-info td:first-child {
+     font-weight: 600;
+     color: #667eea;
+     width: 250px;
+ }
+
+ .schema-section {
+     margin-bottom: 40px;
+ }
+
+ .schema-title {
+     background: #667eea;
+     color: white;
+     padding: 15px 20px;
+     border-radius: 8px 8px 0 0;
+     font-size: 1.3rem;
+     font-weight: 600;
+ }
+
+ .table-card {
+     background: white;
+     margin-bottom: 20px;
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+ }
+
+ .table-header {
+     background: #f7fafc;
+     padding: 15px 20px;
+     border-bottom: 2px solid #667eea;
+ }
+
+ .table-name {
+     font-size: 1.2rem;
+     font-weight: 600;
+     color: #2d3748;
+     margin: 0 0 5px 0;
+ }
+
+ .table-desc {
+     color: #718096;
+     font-size: 0.95rem;
+     margin: 0;
+ }
+
+ .fields-table {
+     width: 100%;
+     border-collapse: collapse;
+ }
+
+ .fields-table thead {
+     background: #667eea;
+     color: white;
+ }
+
+ .fields-table th {
+     padding: 12px;
+     text-align: left;
+     font-weight: 600;
+     font-size: 0.9rem;
+ }
+
+ .fields-table td {
+     padding: 10px 12px;
+     border-bottom: 1px solid #e2e8f0;
+     font-size: 0.9rem;
+ }
+
+ .fields-table tbody tr:hover {
+     background: #f7fafc;
+ }
+
+ .pk {
+     background: #fef5e7;
+     color: #d68910;
+     padding: 2px 8px;
+     border-radius: 4px;
+     font-weight: 600;
+     font-size: 0.85rem;
+ }
+
+ .fk {
+     background: #e8f4fd;
+     color: #2874a6;
+     padding: 2px 8px;
+     border-radius: 4px;
+     font-weight: 600;
+     font-size: 0.85rem;
+ }
+
+ .badge-yes {
+     background: #d4edda;
+     color: #155724;
+     padding: 2px 8px;
+     border-radius: 4px;
+     font-weight: 600;
+ }
+
+ .badge-no {
+     background: #f8d7da;
+     color: #721c24;
+     padding: 2px 8px;
+     border-radius: 4px;
+     font-weight: 600;
+ }
+
+ @media print {
+     body {
+         background: white;
+     }
+
+     .table-card {
+         page-break-inside: avoid;
+     }
+ }

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src="img/farmacia_render.png" alt="Logo Farmacia" class="logo">
+        <h1>Diccionario de Datos</h1>
+        <p>Farmacia Cruz Verde</p>
+    </div>
+
+    <div class="db-info">
+        <table>
+            <tr>
+                <td>Nombre de la Base de Datos:</td>
+                <td><strong>farmacia_cruzverde</strong></td>
+            </tr>
+            <tr>
+                <td>Descripción:</td>
+                <td>Sistema de gestión de ventas de medicamentos sin receta médica, control de inventario y
+                    administración de clientes</td>
+            </tr>
+            <tr>
+                <td>DBMS:</td>
+                <td>Microsoft SQL Server</td>
+            </tr>
+            <tr>
+                <td>Propietario</td>
+                <td>LAPTOP-LGN9FMKL\josue</td>
+            </tr>
+            <tr>
+                <td>Fecha de Creacion</td>
+                <td>15/10/2025 17:29:43</td>
+            </tr>
+            <tr>
+                <td>Fecha de Documentación:</td>
+                <td>24/10/2025</td>
+            </tr>
+            <tr>
+                <td>Número de Tablas:</td>
+                <td>11 tablas distribuidas en 2 schemas</td>
+            </tr>
+            <tr>
+                <td>Schemas:</td>
+                <td><strong>Operacional</strong> (5 tablas) | <strong>Catalogo</strong> (6 tablas)</td>
+            </tr>
+            <tr>
+                <td>Tamaño de la Base de datos</td>
+                <td>16.00 MB</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- SCHEMA: OPERACIONAL -->
+    <div class="schema-section">
+        <div class="schema-title">🔄 SCHEMA: Operacional</div>
+
+        <!-- Tabla: Empleado -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Operacional.Empleado</h3>
+                <p class="table-desc">Información de empleados que atienden las ventas en la farmacia</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idEmpleado</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único del empleado</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td>-</td>
+                        <td>Nombre completo del empleado</td>
+                    </tr>
+                    <tr>
+                        <td>Cargo</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td>-</td>
+                        <td>Puesto del empleado (Gerente, Cajero, Farmacéutico, etc.)</td>
+                    </tr>
+                    <tr>
+                        <td>Telefono</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Número de teléfono de contacto</td>
+                    </tr>
+                    <tr>
+                        <td>Correo</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Correo electrónico corporativo</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha_Nacimiento</td>
+                        <td>DATE</td>
+                        <td>YYYY-MM-DD</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Fecha de nacimiento del empleado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla: Cliente -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Operacional.Cliente</h3>
+                <p class="table-desc">Registro de clientes que realizan compras en la farmacia</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idCliente</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único del cliente</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Nombre(s) del cliente</td>
+                    </tr>
+                    <tr>
+                        <td>Apellido</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Apellido(s) del cliente</td>
+                    </tr>
+                    <tr>
+                        <td>Telefono</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Número de teléfono de contacto</td>
+                    </tr>
+                    <tr>
+                        <td>Correo</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Correo electrónico del cliente</td>
+                    </tr>
+                    <tr>
+                        <td>Direccion</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Dirección física del cliente</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha_Creacion</td>
+                        <td>DATE</td>
+                        <td>YYYY-MM-DD</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Fecha de registro del cliente en el sistema</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla: Venta -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Operacional.Venta</h3>
+                <p class="table-desc">Registro de transacciones de venta realizadas en la farmacia</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idVenta</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único de la venta</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha_Venta</td>
+                        <td>DATE</td>
+                        <td>YYYY-MM-DD</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Fecha en que se realizó la venta</td>
+                    </tr>
+                    <tr>
+                        <td>Estado_Venta</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Estado actual de la venta (Completada, Pendiente, Cancelada)</td>
+                    </tr>
+                    <tr>
+                        <td>idEmpleado</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia al empleado que atendió la venta</td>
+                    </tr>
+                    <tr>
+                        <td>idCliente</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia al cliente que realizó la compra</td>
+                    </tr>
+                    <tr>
+                        <td>idMetodo_Pago</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia al método de pago utilizado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla: Detalle_Venta -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Operacional.Detalle_Venta</h3>
+                <p class="table-desc">Líneas de detalle de cada venta (medicamentos vendidos)</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idDetalle_Venta</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único del detalle de venta</td>
+                    </tr>
+                    <tr>
+                        <td>Cantidad</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Cantidad de unidades vendidas del medicamento</td>
+                    </tr>
+                    <tr>
+                        <td>Precio_Unitario</td>
+                        <td>DECIMAL</td>
+                        <td>(18,2)</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Precio unitario del medicamento al momento de la venta</td>
+                    </tr>
+                    <tr>
+                        <td>SubTotal</td>
+                        <td>DECIMAL</td>
+                        <td>(18,2)</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Subtotal de la línea (Cantidad × Precio_Unitario)</td>
+                    </tr>
+                    <tr>
+                        <td>Total_Venta</td>
+                        <td>DECIMAL</td>
+                        <td>(18,2)</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Total acumulado de la venta</td>
+                    </tr>
+                    <tr>
+                        <td>idVenta</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia a la venta a la que pertenece este detalle</td>
+                    </tr>
+                    <tr>
+                        <td>idMedicamento</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia al medicamento vendido</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla: Lote -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Operacional.Lote</h3>
+                <p class="table-desc">Control de lotes de medicamentos con fecha de caducidad y stock</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idLote</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único del lote</td>
+                    </tr>
+                    <tr>
+                        <td>Fecha_Caducidad</td>
+                        <td>DATE</td>
+                        <td>YYYY-MM-DD</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Fecha de vencimiento del lote</td>
+                    </tr>
+                    <tr>
+                        <td>Stock_Actual</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Cantidad disponible en este lote</td>
+                    </tr>
+                    <tr>
+                        <td>Codigo_Lote</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Código único del lote asignado por el proveedor</td>
+                    </tr>
+                    <tr>
+                        <td>idMedicamento</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia al medicamento al que pertenece el lote</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SCHEMA: CATALOGO -->
+    <div class="schema-section">
+        <div class="schema-title">📦 SCHEMA: Catalogo</div>
+
+        <!-- Tabla: Medicamento -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Catalogo.Medicamento</h3>
+                <p class="table-desc">Catálogo de medicamentos disponibles para venta</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idMedicamento</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único del medicamento</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre_Comercial</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Nombre comercial del medicamento (ej: Tylenol)</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre_Generico</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Principio activo del medicamento (ej: Paracetamol)</td>
+                    </tr>
+                    <tr>
+                        <td>Precio_Unitario</td>
+                        <td>DECIMAL</td>
+                        <td>(18,2)</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Precio de venta al público</td>
+                    </tr>
+                    <tr>
+                        <td>idCategoria_Medicamento</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia a la categoría del medicamento</td>
+                    </tr>
+                    <tr>
+                        <td>idPresentacion</td>
+                        <td>INT</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia a la presentación del medicamento</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla: Categoria_Medicamento -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Catalogo.Categoria_Medicamento</h3>
+                <p class="table-desc">Clasificación de medicamentos por categoría terapéutica</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idCategoria_Medicamento</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único de la categoría</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre_Categoria</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Nombre de la categoría (Analgésicos, Antigripales, etc.)</td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Descripción detallada de la categoría</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla: Presentacion -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Catalogo.Presentacion</h3>
+                <p class="table-desc">Formatos de presentación de medicamentos</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idPresentacion</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único de la presentación</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre_Presentacion</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Sí</span></td>
+                        <td>-</td>
+                        <td>Tipo de presentación (Tabletas, Jarabe, Crema, etc.)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla: Metodo_Pago -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Catalogo.Metodo_Pago</h3>
+                <p class="table-desc">Formas de pago aceptadas en la farmacia</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idMetodo_Pago</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único del método de pago</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td>-</td>
+                        <td>Efectivo, Tarjeta de Crédito,
+Tarjeta de Débito,Transferencia Bancaria</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabla: Proveedor -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Catalogo.Proveedor</h3>
+                <p class="table-desc">Catalogo de proveedores</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idProveedor</strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único del método de pago</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre_Proveedor </td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td>-</td>
+                        <td>Nombre del Proveedor o Farmaceutica</td>
+                    </tr>
+                    <tr>
+                        <td>Telefono  </td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td>-</td>
+                        <td>Telefono valido del Proveedor</td>
+                    </tr>
+                    <tr>
+                        <td>Correo</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Si</span></td>
+                        <td>-</td>
+                        <td>Correo del Proveedor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+         <!-- Tabla: Proveedor -->
+        <div class="table-card">
+            <div class="table-header">
+                <h3 class="table-name">Catalogo.Proveedor_Medicamento</h3>
+                <p class="table-desc">Catalogo de proveedores</p>
+            </div>
+            <table class="fields-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campo</th>
+                        <th>Tipo de Dato</th>
+                        <th>Formato</th>
+                        <th>Acepta NULL</th>
+                        <th>Llave</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>idProveedor_Medicamento </strong></td>
+                        <td>INT</td>
+                        <td>IDENTITY(1,1)</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="pk">PK</span></td>
+                        <td>Identificador único del método de pago</td>
+                    </tr>
+                    <tr>
+                        <td>Precio_Compra</td>
+                        <td>DECIMAL</td>
+                        <td>-</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td>-</td>
+                        <td>Precio de Compra del Medicamento</td>
+                    </tr>
+                    <tr>
+                        <td>idMedicamento</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-no">No</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia a la categoría del medicamento</td>
+                    </tr>
+                    <tr>
+                        <td>idProveedor</td>
+                        <td>VARCHAR(45)</td>
+                        <td>-</td>
+                        <td><span class="badge-yes">Si</span></td>
+                        <td><span class="fk">FK</span></td>
+                        <td>Referencia a la categoría del medicamento</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</body>
+
+</html>
